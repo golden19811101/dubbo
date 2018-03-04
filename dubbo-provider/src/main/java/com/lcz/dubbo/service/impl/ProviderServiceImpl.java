@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @time:16:43
  */
 @Service("providerService")
-public class ProviderServiceImpl implements ProviderService{
+public class ProviderServiceImpl implements ProviderService {
     @Override
     public String sendMsg() {
         return "CC发送了一条消息......";
