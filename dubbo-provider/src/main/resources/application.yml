@@ -1,6 +1,6 @@
 server:
   port: 8080
-
+# ¡¨Ω”≥ÿ≈‰÷√
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
