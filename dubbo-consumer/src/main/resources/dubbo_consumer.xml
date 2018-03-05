@@ -9,7 +9,10 @@
     <dubbo:annotation package="com.lcz.dubbo.*"/>
     <!-- 使用zookeeper注册中心暴露服务地址 -->
     <dubbo:registry check="false" address="zookeeper://192.168.168.135:2181"/>
-    <!-- 要引用的服务 -->
-    <dubbo:reference interface="com.lcz.dubbo.service.ProviderService" id="providerService"/>
+    <!-- 要引用的服务
+        timeout:超时时间，dubbo默认以consumer中配置的时间为准
+     -->
+    <dubbo:reference timeout="4000" interface="com.lcz.dubbo.service.ProviderService" id="providerService"/>
+    <dubbo:reference timeout="4000" interface="com.lcz.dubbo.service.UserService" id="userService"/>
 
 </beans>
