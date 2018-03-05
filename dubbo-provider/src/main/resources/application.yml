@@ -1,6 +1,6 @@
 server:
     port: 8080
-# ���ӳ�����
+# ���ӳ����
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
@@ -8,7 +8,7 @@ spring:
         url: jdbc:mysql://localhost:3306/springboot_dubbo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
         username: root
         password:
-        #���ӳص�������Ϣ
+        # 连接初始值，连接池启动时创建的连接数量的初始值
         initialSize: 10
         minIdle: 10
         maxActive: 100
@@ -30,10 +30,10 @@ spring:
             name: dubbo # RPC通信所采用的协议
             port: 20880 # 本服务对外暴露的端口号
         scan: com.lcz.dubbo.service # 服务实现类所在的路径
-# mybatis����
+# mybatis
 mybatis:
     mapperLocations: classpath:mapper/*.xml
     # configLocation: classpath:mybatis.xml
     configuration:
-        # �����շ�ת��
+        # 开启驼峰转换
         map-underscore-to-camel-case: true

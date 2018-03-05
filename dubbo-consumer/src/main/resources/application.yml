@@ -4,7 +4,7 @@ server:
 spring:
     dubbo:
         application:
-            name: dubbo-consumer # �����������
+            name: dubbo-consumer # 服务名称
         registry:
-            address: zookeeper://192.168.178.136:2181 # zookeeper���ڷ�������IP�Ͷ˿ں�
-        scan: com.lcz.dubbo.controller # ���÷����·��
+            address: zookeeper://192.168.178.136:2181 # zookeeper所在服务器的IP和端口号
+        scan: com.lcz.dubbo.controller # 引用服务的路径
