@@ -1,4 +1,16 @@
-部署方法：
+**springboot-dubbo分布式项目**
+
+**一、介绍**
+- 本项目是一个基础的分布式项目模板，在此基础上可以使用这个模板进行项目改造和创建。
+
+**二、采用技术**
+- SpringBoot；
+- MyBatis；
+- Druid；
+- Zookeeper；
+- Dubbo。
+
+**三、部署方式**
 - 通过git下载源码；
 - 创建数据库springboot_dubbo，数据库编码为UTF-8；
 - 导入doc/springboot_dubbo.sql文件，默认文件中已包含初始化数据；
