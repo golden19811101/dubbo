@@ -1,6 +1,6 @@
 server:
-  port: 8080
-# Á¬½Ó³ØÅäÖÃ
+    port: 8080
+# ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
@@ -8,7 +8,7 @@ spring:
         url: jdbc:mysql://localhost:3306/springboot_dubbo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
         username: root
         password:
-        #Á¬½Ó³ØµÄÅäÖÃĞÅÏ¢
+        #ï¿½ï¿½ï¿½Ó³Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
         initialSize: 10
         minIdle: 10
         maxActive: 100
@@ -21,10 +21,19 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxPoolPreparedStatementPerConnectionSize: 20
-# mybatisÅäÖÃ
+    dubbo:
+        application:
+            name: dubbo-provider # æœ¬æœåŠ¡çš„åç§°
+        registry:
+            address: zookeeper://192.168.178.136:2181 # ZooKeeperæ‰€åœ¨æœåŠ¡å™¨çš„IPå’Œç«¯å£å·
+        protocol:
+            name: dubbo # RPCé€šä¿¡æ‰€é‡‡ç”¨çš„åè®®
+            port: 20880 # æœ¬æœåŠ¡å¯¹å¤–æš´éœ²çš„ç«¯å£å·
+        scan: com.lcz.dubbo.service # æœåŠ¡å®ç°ç±»æ‰€åœ¨çš„è·¯å¾„
+# mybatisï¿½ï¿½ï¿½ï¿½
 mybatis:
     mapperLocations: classpath:mapper/*.xml
     # configLocation: classpath:mybatis.xml
     configuration:
-      # ¿ªÆôÍÕ·å×ª»»
-      map-underscore-to-camel-case: true
+        # ï¿½ï¿½ï¿½ï¿½ï¿½Õ·ï¿½×ªï¿½ï¿½
+        map-underscore-to-camel-case: true

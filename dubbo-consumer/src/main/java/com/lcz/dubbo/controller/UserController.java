@@ -1,8 +1,8 @@
 package com.lcz.dubbo.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Reference(version = "1.0.0")
     private UserService userService;
 
     @GetMapping("/{id}")

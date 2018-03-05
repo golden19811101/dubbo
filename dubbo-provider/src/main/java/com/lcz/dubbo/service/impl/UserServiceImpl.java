@@ -1,10 +1,10 @@
 package com.lcz.dubbo.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.lcz.dubbo.dao.UserDao;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,7 +13,8 @@ import java.util.List;
  * @date:2018/1/10
  * @time:16:43
  */
-@Service("userService")
+@org.springframework.stereotype.Service
+@Service(version = "1.0.0")
 public class UserServiceImpl implements UserService {
 
     @Autowired

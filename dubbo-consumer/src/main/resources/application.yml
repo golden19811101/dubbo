@@ -1,0 +1,10 @@
+server:
+    port: 8081
+
+spring:
+    dubbo:
+        application:
+            name: dubbo-consumer # �����������
+        registry:
+            address: zookeeper://192.168.178.136:2181 # zookeeper���ڷ�������IP�Ͷ˿ں�
+        scan: com.lcz.dubbo.controller # ���÷����·��

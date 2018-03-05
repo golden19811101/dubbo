@@ -1,7 +1,7 @@
 package com.lcz.dubbo.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.lcz.dubbo.service.ProviderService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumerController {
 
-    @Autowired
+    @Reference(version = "1.0.0")
     private ProviderService providerService;
 
     @RequestMapping("/sendMsg")
