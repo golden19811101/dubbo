@@ -1,8 +1,6 @@
 package com.lcz.dubbo.dao;
 
 import com.lcz.dubbo.model.User;
-import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
 
 /**
@@ -10,7 +8,6 @@ import java.util.List;
  * @date:2018/3/5
  * @time:11:02
  */
-@Mapper
 public interface UserDao {
 
     /**
