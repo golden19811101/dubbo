@@ -8,6 +8,20 @@ spring:
         registry:
             address: zookeeper://192.168.168.135:2181 # zookeeper所在服务器的IP和端口号
         scan: com.lcz.dubbo.controller # 引用服务的路径
+        consumer:
+            timeout: 1000
+            check: true # 服务启动时检查被调用服务是否可用
+            retries: 2  # 服务调用重试次数
+    redis:
+        host: 192.168.168.131
+        port: 6379
+        database: 0
+        password:
+        pool:
+            max-idle: 4
+            min-idle: 1
+            max-active: 4
+            max-wait: 2000
     freemarker:
         suffix: .ftl
         templateEncoding: UTF-8

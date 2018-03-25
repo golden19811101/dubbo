@@ -1,6 +1,8 @@
 package com.lcz.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.lcz.dubbo.core.rpc.DistributedLock;
+import com.lcz.dubbo.core.util.DistributedLockUtil;
 import com.lcz.dubbo.dao.UserDao;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
@@ -15,6 +17,7 @@ import java.util.List;
  */
 @Service(version = "1.0.0")
 public class UserServiceImpl implements UserService {
+    private DistributedLock lock = null;
 
     @Autowired
     private UserDao userDao;
@@ -36,5 +39,78 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> queryUserList() {
         return userDao.queryList();
+    }
+
+    @Override
+    public void saveUser(User user) {
+        lock = DistributedLockUtil.getDistributedLock("saveUser_"+user.getId());
+        try{
+            if (lock.acquire()) {
+                //获取锁成功
+                //保存
+                userDao.save(user);
+            } else {
+                // 获取锁失败
+                // todo 不保存，返回失败信息
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (lock != null) {
+                //释放锁
+                lock.release();
+            }
+        }
+
+    }
+
+    @Override
+    public int updateUser(User user) {
+        int result = -1;
+        lock = DistributedLockUtil.getDistributedLock("updateUser_"+user.getId());
+        try{
+            if (lock.acquire()) {
+                //获取锁成功
+                //保存
+                result = userDao.update(user);
+            } else {
+                // 获取锁失败
+                // todo 不更新，返回失败信息
+                result = -1;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (lock != null) {
+                //释放锁
+                lock.release();
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public int deleteUser(String id) {
+        int result = -1;
+        lock = DistributedLockUtil.getDistributedLock("deleteUser_"+id);
+        try{
+            if (lock.acquire()) {
+                //获取锁成功
+                //保存
+                result = userDao.delete(id);
+            } else {
+                // 获取锁失败
+                // todo 不删除，返回失败信息
+                result = -1;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (lock != null) {
+                //释放锁
+                lock.release();
+            }
+        }
+        return result;
     }
 }

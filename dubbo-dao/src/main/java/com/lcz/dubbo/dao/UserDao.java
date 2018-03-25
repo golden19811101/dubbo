@@ -22,4 +22,22 @@ public interface UserDao {
      * @return
      */
     List<User> queryList();
+
+    /**
+     * 保存对象
+     * @param user
+     */
+    void save(User user);
+
+    /**
+     * 更新对象
+     * @param user
+     */
+    int update(User user);
+
+    /**
+     * 删除对象
+     * @param id
+     */
+    int delete(String id);
 }

@@ -23,4 +23,22 @@ public interface UserService {
      * @return
      */
     List<User> queryUserList();
+
+    /**
+     * 保存对象
+     * @param user
+     */
+    void saveUser(User user);
+
+    /**
+     * 更新对象
+     * @param user
+     */
+    int updateUser(User user);
+
+    /**
+     * 删除对象
+     * @param id
+     */
+    int deleteUser(String id);
 }

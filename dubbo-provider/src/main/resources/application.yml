@@ -29,6 +29,18 @@ spring:
             name: dubbo # RPC通信所采用的协议
             port: 20880 # 本服务对外暴露的端口号
         scan: com.lcz.dubbo.service # 服务实现类所在的路径
+        provider:
+            retries: 0  # 服务调用重试次数，服务发布者不给重试，让服务调用者自己重试
+    redis:
+        host: 192.168.168.131
+        port: 6379
+        database: 0
+        password:
+        pool:
+            max-idle: 4
+            min-idle: 1
+            max-active: 4
+            max-wait: 2000
 # mybatis
 mybatis:
     mapperLocations: classpath:mapper/*.xml
