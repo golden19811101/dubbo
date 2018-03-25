@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 查询对象
+     *
      * @param id
      * @return
      */
@@ -34,6 +35,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 查询集合
+     *
      * @return
      */
     @Override
@@ -43,8 +45,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
-        lock = DistributedLockUtil.getDistributedLock("saveUser_"+user.getId());
-        try{
+        lock = DistributedLockUtil.getDistributedLock("saveUser_" + user.getId());
+        try {
             if (lock.acquire()) {
                 //获取锁成功
                 //保存
@@ -53,9 +55,9 @@ public class UserServiceImpl implements UserService {
                 // 获取锁失败
                 // todo 不保存，返回失败信息
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             if (lock != null) {
                 //释放锁
                 lock.release();
@@ -67,8 +69,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public int updateUser(User user) {
         int result = -1;
-        lock = DistributedLockUtil.getDistributedLock("updateUser_"+user.getId());
-        try{
+        lock = DistributedLockUtil.getDistributedLock("updateUser_" + user.getId());
+        try {
             if (lock.acquire()) {
                 //获取锁成功
                 //保存
@@ -78,9 +80,9 @@ public class UserServiceImpl implements UserService {
                 // todo 不更新，返回失败信息
                 result = -1;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             if (lock != null) {
                 //释放锁
                 lock.release();
@@ -92,8 +94,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public int deleteUser(String id) {
         int result = -1;
-        lock = DistributedLockUtil.getDistributedLock("deleteUser_"+id);
-        try{
+        lock = DistributedLockUtil.getDistributedLock("deleteUser_" + id);
+        try {
             if (lock.acquire()) {
                 //获取锁成功
                 //保存
@@ -103,9 +105,9 @@ public class UserServiceImpl implements UserService {
                 // todo 不删除，返回失败信息
                 result = -1;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             if (lock != null) {
                 //释放锁
                 lock.release();
