@@ -1,9 +1,9 @@
-**springboot-dubbo分布式项目**
+## springboot-dubbo分布式项目
 
-**一、介绍**
+## 一、介绍
 - 本项目是一个maven构建的基于zookeeper和dubbo的多模块分布式项目模板，可以在此基础上使用这个模板进行项目创建和改造。
 
-**二、采用技术**
+## 二、采用技术
 - SpringBoot；
 - MyBatis；
 - Druid；
@@ -11,7 +11,7 @@
 - Dubbo；
 - Freemarker。
 
-**三、部署方式**
+## 三、部署方式
 - 通过git下载源码；
 - 创建数据库springboot_dubbo，数据库编码为UTF-8；
 - 导入doc/springboot_dubbo.sql文件，默认文件中已包含初始化数据；
@@ -23,3 +23,15 @@
 - 开启DubboProviderApplication.java；
 - 开启DubboConsumerApplication.java；
 - 访问：http://127.0.0.1:8081测试。
+
+## 预览图
+
+![预览图](doc/imgs/1.png)
+![预览图](doc/imgs/2.png)
+![预览图](doc/imgs/3.png)
+![预览图](doc/imgs/4.png)
+![预览图](doc/imgs/5.png)
+![预览图](doc/imgs/6.png)
+![预览图](doc/imgs/7.png)
+![预览图](doc/imgs/8.png)
+![预览图](doc/imgs/9.png)
