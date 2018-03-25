@@ -8,3 +8,10 @@ spring:
         registry:
             address: zookeeper://192.168.168.135:2181 # zookeeper所在服务器的IP和端口号
         scan: com.lcz.dubbo.controller # 引用服务的路径
+    freemarker:
+        suffix: .ftl
+        templateEncoding: UTF-8
+        templateLoaderPath: classpath:/templates/
+        content-type: text/html
+    mvc:
+        static-path-pattern: /static/**
