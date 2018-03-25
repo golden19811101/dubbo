@@ -33,5 +33,3 @@
 ![预览图](doc/imgs/5.png)
 ![预览图](doc/imgs/6.png)
 ![预览图](doc/imgs/7.png)
-![预览图](doc/imgs/8.png)
-![预览图](doc/imgs/9.png)
