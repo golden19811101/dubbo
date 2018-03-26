@@ -39,5 +39,5 @@ public interface UserDao {
      * 删除对象
      * @param id
      */
-    int delete(String id);
+    int delete(Integer id);
 }

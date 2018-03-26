@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int deleteUser(String id) {
+    public int deleteUser(Integer id) {
         int result = -1;
         lock = DistributedLockUtil.getDistributedLock("deleteUser_" + id);
         try {

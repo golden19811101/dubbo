@@ -40,5 +40,5 @@ public interface UserService {
      * 删除对象
      * @param id
      */
-    int deleteUser(String id);
+    int deleteUser(Integer id);
 }

@@ -38,7 +38,14 @@ public class UserController {
     }
 
     @GetMapping("/delete/{id}")
-    public void deleteUser(@PathVariable("id")String id){
-        userService.deleteUser(id);
+    public String deleteUser(@PathVariable("id")Integer id){
+        User user = userService.queryUser(id);
+        if(null != user){
+            userService.deleteUser(id);
+            return "delete success";
+        }else{
+            return "delete failure";
+        }
+
     }
 }
