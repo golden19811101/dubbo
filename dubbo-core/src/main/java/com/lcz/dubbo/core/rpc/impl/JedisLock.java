@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 /**
+ * 分布式锁实现类
  * @author:luchunzhou
  * @date:2018/3/25
  * @time:14:02

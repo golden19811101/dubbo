@@ -1,6 +1,7 @@
 package com.lcz.dubbo.core.rpc;
 
 /**
+ * 分布式锁接口
  * @author:luchunzhou
  * @date:2018/3/25
  * @time:14:01
