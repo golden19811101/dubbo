@@ -1,11 +1,12 @@
 ## springboot-dubbo分布式项目
 
 ## 一、介绍
-- 本项目是一个maven构建的基于zookeeper和dubbo的多模块分布式项目模板，可以在此基础上使用这个模板进行项目创建和改造。
+- 本项目是一个maven构建的基于zookeeper和dubbo的多模块分布式项目模板，同时实现了分布式锁功能，可以在此基础上使用这个模板进行项目创建和改造。
 
 ## 二、采用技术
 - SpringBoot；
 - MyBatis；
+- Redis；
 - Druid；
 - Zookeeper；
 - Dubbo；
@@ -21,8 +22,11 @@
 - 修改dubbo-provider、dubbo-consumer模块的application.yml中zookeeper配置信息；
 - maven编译；
 - 开启DubboProviderApplication.java；
-- 开启DubboConsumerApplication.java；
-- 访问：http://127.0.0.1:8081测试。
+- 开启DubboConsumerApplication.java。
+
+## 测试
+- 基础测试：访问：http://127.0.0.1:8081
+- 分布式锁测试：对于userServiceImpl实现了基于redis的分布式锁功能，具体代码可以去查看。
 
 ## 预览图
 
