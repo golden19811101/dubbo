@@ -7,9 +7,21 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body>
-<a href="#" id="qMsg">获取消息</a>
-<input type="text" id="userId" placeholder="不输入则查询用户列表"><input type="button" id="qUserBtn" value="查询">
-
+测试一：<a href="#" id="qMsg">获取消息</a>
+<br>
+测试二(用户操作)：
+<br>
+<input type="text" id="userId" placeholder="不输入则查询用户列表">
+<input type="button" id="qUserBtn" value="查询">
+<input type="button" id="deleteUserBtn" value="删除">
+<br>
+<input type="number" id="id" placeholder="id">
+<input type="text" id="name" placeholder="姓名">
+<input type="number" id="age" placeholder="年龄">
+<input type="button" id="saveUserBtn" value="保存">
+<input type="button" id="updateUserBtn" value="更新">
+<hr>
+结果：
 <ul>
 </ul>
 
