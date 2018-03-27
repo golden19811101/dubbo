@@ -9,7 +9,7 @@ import java.util.UUID;
 /**
  * 封装各种生成唯一性ID算法的工具类.
  * @author luchunzhou
- * @version 2018-3-27
+ * @date 2018-3-27
  */
 @Service
 @Lazy(false)

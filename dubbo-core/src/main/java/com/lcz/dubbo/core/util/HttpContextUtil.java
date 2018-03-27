@@ -5,6 +5,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author luchunzhou
+ * @date 2018-3-27
+ */
 public class HttpContextUtil {
 
 	public static HttpServletRequest getHttpServletRequest() {
