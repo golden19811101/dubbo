@@ -1,6 +1,7 @@
 package com.lcz.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.lcz.dubbo.core.aop.annotation.SysLog;
 import com.lcz.dubbo.core.util.R;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
@@ -31,18 +32,21 @@ public class UserController {
         return R.ok().put("userList",userList);
     }
 
+    @SysLog("保存用户")
     @PostMapping("/save")
     public R saveUser(@RequestBody User user){
         userService.saveUser(user);
         return R.ok("保存成功");
     }
 
+    @SysLog("更新用户")
     @PostMapping("/update")
     public R updateUser(@RequestBody User user){
         userService.updateUser(user);
         return R.ok("更新成功");
     }
 
+    @SysLog("删除用户")
     @GetMapping("/delete/{id}")
     public R deleteUser(@PathVariable("id")Integer id){
         User user = userService.queryUser(id);

@@ -1,7 +1,7 @@
 package com.lcz.dubbo.core.util;
 
-import com.lcz.dubbo.core.rpc.DistributedLock;
-import com.lcz.dubbo.core.rpc.impl.JedisLock;
+import com.lcz.dubbo.core.lock.DistributedLock;
+import com.lcz.dubbo.core.lock.impl.JedisLock;
 
 /**
  * @author:luchunzhou

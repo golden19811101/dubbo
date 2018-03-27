@@ -1,6 +1,6 @@
 package com.lcz.dubbo.dao;
 
-import com.lcz.dubbo.core.base.BaseDao;
+import com.lcz.dubbo.base.BaseDao;
 import com.lcz.dubbo.model.User;
 
 /**

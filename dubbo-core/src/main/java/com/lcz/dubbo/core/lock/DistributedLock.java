@@ -1,4 +1,4 @@
-package com.lcz.dubbo.core.rpc;
+package com.lcz.dubbo.core.lock;
 
 /**
  * 分布式锁接口

@@ -1,7 +1,7 @@
 package com.lcz.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.lcz.dubbo.core.rpc.DistributedLock;
+import com.lcz.dubbo.core.lock.DistributedLock;
 import com.lcz.dubbo.core.util.DistributedLockUtil;
 import com.lcz.dubbo.dao.UserDao;
 import com.lcz.dubbo.model.User;

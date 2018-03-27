@@ -1,4 +1,4 @@
-package com.lcz.dubbo.core.base;
+package com.lcz.dubbo.base;
 
 import java.io.Serializable;
 

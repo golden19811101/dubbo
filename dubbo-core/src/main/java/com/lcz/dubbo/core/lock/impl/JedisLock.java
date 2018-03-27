@@ -1,7 +1,7 @@
-package com.lcz.dubbo.core.rpc.impl;
+package com.lcz.dubbo.core.lock.impl;
 
 import com.lcz.dubbo.core.exception.CCException;
-import com.lcz.dubbo.core.rpc.DistributedLock;
+import com.lcz.dubbo.core.lock.DistributedLock;
 import com.lcz.dubbo.core.util.SpringContextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

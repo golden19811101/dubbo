@@ -1,6 +1,6 @@
 package com.lcz.dubbo.model;
 
-import com.lcz.dubbo.core.base.BaseModel;
+import com.lcz.dubbo.base.BaseModel;
 
 /**
  * Created by luchunzhou on 2018/3/5.

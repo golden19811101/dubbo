@@ -1,4 +1,4 @@
-package com.lcz.dubbo.core.base;
+package com.lcz.dubbo.base;
 
 import java.util.List;
 import java.util.Map;
