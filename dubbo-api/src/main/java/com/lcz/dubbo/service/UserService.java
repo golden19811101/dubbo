@@ -3,6 +3,7 @@ package com.lcz.dubbo.service;
 import com.lcz.dubbo.model.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author:luchunzhou
@@ -22,7 +23,7 @@ public interface UserService {
      * 查询集合
      * @return
      */
-    List<User> queryUserList();
+    List<User> queryUserList(Map<String, Object> map);
 
     /**
      * 保存对象

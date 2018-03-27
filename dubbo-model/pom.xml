@@ -11,5 +11,13 @@
 
     <artifactId>dubbo-model</artifactId>
 
+    <dependencies>
+        <!-- 模块间依赖 start -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>dubbo-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
+    </dependencies>
 </project>

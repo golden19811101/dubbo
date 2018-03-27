@@ -1,22 +1,13 @@
 package com.lcz.dubbo.model;
 
-import java.io.Serializable;
+import com.lcz.dubbo.core.base.BaseModel;
 
 /**
  * Created by luchunzhou on 2018/3/5.
  */
-public class User implements Serializable {
-    private Integer id;
+public class User extends BaseModel {
     private String name;
     private Integer age;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

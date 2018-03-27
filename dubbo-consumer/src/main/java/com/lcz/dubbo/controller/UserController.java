@@ -5,7 +5,9 @@ import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by luchunzhou on 2018/3/5.
@@ -24,7 +26,7 @@ public class UserController {
 
     @GetMapping("/list")
     public List<User> queryUserList(){
-        return userService.queryUserList();
+        return userService.queryUserList(new HashMap<>(0));
     }
 
     @PostMapping("/save")

@@ -9,6 +9,7 @@ import com.lcz.dubbo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author:luchunzhou
@@ -39,8 +40,8 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public List<User> queryUserList() {
-        return userDao.queryList();
+    public List<User> queryUserList(Map<String, Object> map) {
+        return userDao.queryList(map);
     }
 
     @Override
