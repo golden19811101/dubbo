@@ -19,10 +19,10 @@
     $(function () {
         $("#qMsg").click(function () {
             $.get("/sendMsg", function (data) {
-                if(null != data && "" != data){
+                if(data.code == 0){
                     var result = "";
                     result +="<li>";
-                    result +=data;
+                    result +=data.msg;
                     result +="</li>";
                     $("ul").html(result);
                 }else{
@@ -40,20 +40,23 @@
                 url += "list";
             }
             $.get(url, function (data) {
-                if(null != data && "" != data){
+                if(data.code == 0){
                     var result = "";
-                    if("undefined" == typeof(data.length)){
+                    if(null != data.user && "" != data.user){
                         result +="<li>";
-                        result += data.id + "--" + data.name + "--" + data.age;
+                        result += data.user.id + "--" + data.user.name + "--" + data.user.age;
                         result +="</li>";
-                    }else{
-                        for(var i = 0 ; i < data.length ; i ++){
+                        $("ul").html(result);
+                    }else if(null != data.userList && "" != data.userList){
+                        for(var i = 0 ; i < data.userList.length ; i ++){
                             result +="<li>";
-                            result += data[i].id + "--" + data[i].name + "--" + data[i].age;
+                            result += data.userList[i].id + "--" + data.userList[i].name + "--" + data.userList[i].age;
                             result +="</li>";
                         }
+                        $("ul").html(result);
+                    }else{
+                        $("ul").html("无数据");
                     }
-                    $("ul").html(result);
                 }else{
                     $("ul").html("无数据");
                 }

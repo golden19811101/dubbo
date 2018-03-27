@@ -1,13 +1,13 @@
 package com.lcz.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.lcz.dubbo.core.util.R;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by luchunzhou on 2018/3/5.
@@ -20,33 +20,37 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public User queryUser(@PathVariable("id") Integer id){
-        return userService.queryUser(id);
+    public R queryUser(@PathVariable("id") Integer id){
+        User user = userService.queryUser(id);
+        return R.ok().put("user", user);
     }
 
     @GetMapping("/list")
-    public List<User> queryUserList(){
-        return userService.queryUserList(new HashMap<>(0));
+    public R queryUserList(){
+        List<User> userList = userService.queryUserList(new HashMap<>(0));
+        return R.ok().put("userList",userList);
     }
 
     @PostMapping("/save")
-    public void saveUser(@RequestBody User user){
+    public R saveUser(@RequestBody User user){
         userService.saveUser(user);
+        return R.ok("保存成功");
     }
 
     @PostMapping("/update")
-    public void updateUser(@RequestBody User user){
+    public R updateUser(@RequestBody User user){
         userService.updateUser(user);
+        return R.ok("更新成功");
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable("id")Integer id){
+    public R deleteUser(@PathVariable("id")Integer id){
         User user = userService.queryUser(id);
         if(null != user){
             userService.deleteUser(id);
-            return "delete success";
+            return R.ok("删除成功");
         }else{
-            return "delete failure";
+            return R.error("删除失败");
         }
 
     }

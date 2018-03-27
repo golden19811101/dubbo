@@ -1,6 +1,7 @@
 package com.lcz.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.lcz.dubbo.core.util.R;
 import com.lcz.dubbo.service.ProviderService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +18,8 @@ public class ConsumerController {
     private ProviderService providerService;
 
     @RequestMapping("/sendMsg")
-    public String senMsg(){
+    public R senMsg(){
         String msg = providerService.sendMsg();
-        return msg;
+        return R.ok(msg);
     }
 }
