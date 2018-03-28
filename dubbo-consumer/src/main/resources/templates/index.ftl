@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body>
-测试一：<a href="#" id="qMsg">获取消息</a>
+测试一：<input type="button" id="qMsgBtn" value="获取消息">
 <br>
 测试二(用户操作)：
 <br>
@@ -20,6 +20,8 @@
 <input type="number" id="age" placeholder="年龄">
 <input type="button" id="saveUserBtn" value="保存">
 <input type="button" id="updateUserBtn" value="更新">
+<br>
+测试三：<input type="button" id="qLogBtn" value="日志列表">
 <hr>
 结果：
 <ul>
@@ -42,7 +44,7 @@
     }
     $(function () {
         // 获取消息
-        $("#qMsg").click(function () {
+        $("#qMsgBtn").click(function () {
             $.get("/sendMsg", function (data) {
                 if(data.code == 0){
                     $("ul").html("<li>" + data.msg + "</li>");
@@ -165,6 +167,23 @@
                     }else{
                         $("ul").html("<li>" + data.msg + "</li>");
                     }
+                }
+            });
+        });
+        // 获取日志列表
+        $("#qLogBtn").click(function () {
+            $.get("/sys/log/list", function (data) {
+                if(data.code == 0){
+                    var result = "";
+                    result += "<li>" + "----------------------ID----------------------" + "|" + "---操作---" + "|" + "------------------------方法名------------------------" + "|" + "--------创建时间--------" + "</li>";
+                    for(var i = 0 ; i < data.sysLogList.length ; i ++){
+                        result +="<li>";
+                        result += data.sysLogList[i].id + "--" + data.sysLogList[i].operation + "--" + data.sysLogList[i].method + "--" + data.sysLogList[i].createDate;
+                        result +="</li>";
+                    }
+                    $("ul").html(result);
+                }else{
+                    $("<li>无数据</li>");
                 }
             });
         });

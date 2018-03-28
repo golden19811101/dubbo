@@ -41,6 +41,10 @@ spring:
             min-idle: 1
             max-active: 4
             max-wait: 2000
+    # jackson时间格式化
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
 # mybatis
 mybatis:
     mapperLocations: classpath:mapper/*.xml
