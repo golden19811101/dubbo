@@ -68,6 +68,7 @@
                         result += data.user.id + "--" + data.user.name + "--" + data.user.age;
                         result +="</li>";
                         $("ul").html(result);
+                        bindClick();
                     }else if(null != data.userList && "" != data.userList){
                         for(var i = 0 ; i < data.userList.length ; i ++){
                             result +="<li>";

@@ -40,11 +40,11 @@ public class UserController {
                 || StringUtil.isEmpty(user.getId())
                 || StringUtil.isEmpty(user.getName())
                 || null == user.getAge()){
-            return R.error("请完善用户信息");
+            return R.error("请完善用户信息！");
         }
         User tmpUser = userService.queryUser(user.getId());
         if(null != tmpUser){
-            return R.error("用户已存在");
+            return R.error("用户已存在！");
         }
         userService.saveUser(user);
         return R.ok("保存成功");
@@ -57,7 +57,7 @@ public class UserController {
                 || StringUtil.isEmpty(user.getId())
                 || StringUtil.isEmpty(user.getName())
                 || null == user.getAge()){
-            return R.error("请完善用户信息");
+            return R.error("请完善用户信息！");
         }
         userService.updateUser(user);
         return R.ok("更新成功");
@@ -71,7 +71,7 @@ public class UserController {
             userService.deleteUser(id);
             return R.ok("删除成功");
         }else{
-            return R.error("删除失败");
+            return R.error("删除失败！");
         }
 
     }
