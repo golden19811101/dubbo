@@ -3,6 +3,7 @@ package com.lcz.dubbo.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.lcz.dubbo.core.aop.annotation.SysLog;
 import com.lcz.dubbo.core.util.R;
+import com.lcz.dubbo.core.util.StringUtil;
 import com.lcz.dubbo.model.User;
 import com.lcz.dubbo.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public R queryUser(@PathVariable("id") Integer id){
+    public R queryUser(@PathVariable("id") String id){
         User user = userService.queryUser(id);
         return R.ok().put("user", user);
     }
@@ -35,6 +36,16 @@ public class UserController {
     @SysLog("保存用户")
     @PostMapping("/save")
     public R saveUser(@RequestBody User user){
+        if(null == user
+                || StringUtil.isEmpty(user.getId())
+                || StringUtil.isEmpty(user.getName())
+                || null == user.getAge()){
+            return R.error("请完善用户信息");
+        }
+        User tmpUser = userService.queryUser(user.getId());
+        if(null != tmpUser){
+            return R.error("用户已存在");
+        }
         userService.saveUser(user);
         return R.ok("保存成功");
     }
@@ -42,13 +53,19 @@ public class UserController {
     @SysLog("更新用户")
     @PostMapping("/update")
     public R updateUser(@RequestBody User user){
+        if(null == user
+                || StringUtil.isEmpty(user.getId())
+                || StringUtil.isEmpty(user.getName())
+                || null == user.getAge()){
+            return R.error("请完善用户信息");
+        }
         userService.updateUser(user);
         return R.ok("更新成功");
     }
 
     @SysLog("删除用户")
     @GetMapping("/delete/{id}")
-    public R deleteUser(@PathVariable("id")Integer id){
+    public R deleteUser(@PathVariable("id")String id){
         User user = userService.queryUser(id);
         if(null != user){
             userService.deleteUser(id);

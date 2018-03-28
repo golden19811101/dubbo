@@ -17,7 +17,7 @@ public interface UserService {
      * @param id
      * @return
      */
-    User queryUser(Integer id);
+    User queryUser(String id);
 
     /**
      * 查询集合
@@ -41,5 +41,5 @@ public interface UserService {
      * 删除对象
      * @param id
      */
-    int deleteUser(Integer id);
+    int deleteUser(String id);
 }

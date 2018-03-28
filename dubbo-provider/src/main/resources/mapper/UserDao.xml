@@ -3,19 +3,19 @@
 
 <mapper namespace="com.lcz.dubbo.dao.UserDao">
 	<resultMap id="userMap" type="com.lcz.dubbo.model.User" >
-		<id column="id" property="id" jdbcType="INTEGER" />
+		<id column="id" property="id" jdbcType="VARCHAR" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
 		<result column="age" property="age" jdbcType="INTEGER" />
 	</resultMap>
 
-	<select id="queryObject" resultMap="userMap" parameterType="Integer">
+	<select id="queryObject" resultMap="userMap" parameterType="String">
 		select * from `user` where id = #{id}
 	</select>
 
 	<select id="queryList" parameterType="com.lcz.dubbo.model.User" resultMap="userMap">
 		select * from `user`
 		<where>
-			<if test="id != null">
+			<if test="id != null and id.trim() != ''">
 				and id = #{id}
 			</if>
 			<if test="name != null and name.trim() != ''">
@@ -45,7 +45,7 @@
 	<update id="update" parameterType="com.lcz.dubbo.model.User">
 		update `user`
 		<set>
-			<if test="name != null">`name` = #{name}, </if>
+			<if test="name != null and name.trim() != ''">`name` = #{name}, </if>
 			<if test="age != null">`age` = #{age}, </if>
 		</set>
 		where id = #{id}

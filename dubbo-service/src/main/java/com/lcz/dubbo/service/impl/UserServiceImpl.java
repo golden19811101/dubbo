@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public User queryUser(Integer id) {
+    public User queryUser(String id) {
         return userDao.queryObject(id);
     }
 
@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int deleteUser(Integer id) {
+    public int deleteUser(String id) {
         int result = -1;
         lock = DistributedLockUtil.getDistributedLock("deleteUser_" + id);
         try {
