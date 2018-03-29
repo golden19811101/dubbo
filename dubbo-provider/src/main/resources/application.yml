@@ -24,7 +24,7 @@ spring:
         application:
             name: dubbo-provider # 本服务的名称
         registry:
-            address: zookeeper://192.168.178.136:2181 # ZooKeeper所在服务器的IP和端口号
+            address: zookeeper://192.168.168.140:2181 # ZooKeeper所在服务器的IP和端口号
         protocol:
             name: dubbo # RPC通信所采用的协议
             port: 20880 # 本服务对外暴露的端口号
@@ -32,7 +32,7 @@ spring:
         provider:
             retries: 0  # 服务调用重试次数，服务发布者不给重试，让服务调用者自己重试
     redis:
-        host: 192.168.178.128
+        host: 192.168.168.131
         port: 6379
         database: 0
         password:

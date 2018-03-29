@@ -6,14 +6,14 @@ spring:
         application:
             name: dubbo-consumer # 服务名称
         registry:
-            address: zookeeper://192.168.178.136:2181 # zookeeper所在服务器的IP和端口号
+            address: zookeeper://192.168.168.140:2181 # zookeeper所在服务器的IP和端口号
         scan: com.lcz.dubbo # 引用服务的路径(扫描dubbo的@Service注解范围，如果在范围之外，会报空指针错误)
         consumer:
             timeout: 1000
             check: true # 服务启动时检查被调用服务是否可用
             retries: 2  # 服务调用重试次数
     redis:
-        host: 192.168.178.128
+        host: 192.168.168.131
         port: 6379
         database: 0
         password:
