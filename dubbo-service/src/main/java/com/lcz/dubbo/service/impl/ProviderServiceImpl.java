@@ -8,7 +8,6 @@ import com.lcz.dubbo.service.ProviderService;
  * @date:2018/1/10
  * @time:16:43
  */
-@org.springframework.stereotype.Service
 @Service(version = "1.0.0")
 public class ProviderServiceImpl implements ProviderService {
     @Override
