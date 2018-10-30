@@ -1,6 +1,6 @@
 package com.lcz.dubbo.service.impl;
 
-import com.alibaba.druid.util.StringUtils;
+import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.lcz.dubbo.core.util.IdUtil;
 import com.lcz.dubbo.dao.SysLogDao;

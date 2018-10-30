@@ -1,6 +1,6 @@
 package com.lcz.dubbo.core.util;
 
-import com.alibaba.druid.util.StringUtils;
+import com.alibaba.dubbo.common.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
