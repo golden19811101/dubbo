@@ -1,6 +1,7 @@
 package com.lcz.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.lcz.dubbo.core.exception.CCException;
 import com.lcz.dubbo.core.lock.DistributedLock;
 import com.lcz.dubbo.core.util.DistributedLockUtil;
 import com.lcz.dubbo.dao.UserDao;
@@ -54,10 +55,10 @@ public class UserServiceImpl implements UserService {
                 userDao.save(user);
             } else {
                 // 获取锁失败
-                // todo 不保存，返回失败信息
+                throw new CCException("保存用户信息失败");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new CCException("保存用户信息失败");
         } finally {
             if (lock != null) {
                 //释放锁

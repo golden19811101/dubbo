@@ -1,8 +1,8 @@
 package com.lcz.dubbo.service.impl;
 
-import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.lcz.dubbo.core.util.IdUtil;
+import com.lcz.dubbo.core.util.StringUtil;
 import com.lcz.dubbo.dao.SysLogDao;
 import com.lcz.dubbo.model.SysLogModel;
 import com.lcz.dubbo.service.SysLogService;
@@ -42,7 +42,7 @@ public class SysLogServiceImpl implements SysLogService {
 	
 	@Override
 	public void save(SysLogModel sysLogModel){
-		if(StringUtils.isEmpty(sysLogModel.getId())){
+		if(StringUtil.isEmpty(sysLogModel.getId())){
 			sysLogModel.setId(IdUtil.uuid());
 		}
 		sysLogDao.save(sysLogModel);
