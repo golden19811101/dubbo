@@ -73,6 +73,18 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.30</version>
 		</dependency>
+		<!--依赖dubbo-model，在mapper文件引用model对象时需要-->
+		<dependency>
+			<groupId>com.lcz.dubbo</groupId>
+			<artifactId>dubbo-model</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<!--这里必须依赖dubbo-service，非dubbo-api，否则dubbo注册不了消息-->
+		<dependency>
+			<groupId>com.lcz.dubbo</groupId>
+			<artifactId>dubbo-service</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
