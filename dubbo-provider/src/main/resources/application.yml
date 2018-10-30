@@ -52,3 +52,7 @@ mybatis:
     configuration:
         # 开启驼峰转换
         map-underscore-to-camel-case: true
+# 缓存配置
+cc:
+    redis:
+        open: false # 是否开启redis缓存  true开启   false关闭
