@@ -1,4 +1,4 @@
-package com.lcz.dubbo.config;
+package com.lcz.dubbo.provider.config;
 
 import com.alibaba.druid.filter.Filter;
 import com.alibaba.druid.filter.stat.StatFilter;

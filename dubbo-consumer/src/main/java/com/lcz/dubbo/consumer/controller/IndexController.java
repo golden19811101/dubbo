@@ -1,4 +1,4 @@
-package com.lcz.dubbo.controller;
+package com.lcz.dubbo.consumer.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

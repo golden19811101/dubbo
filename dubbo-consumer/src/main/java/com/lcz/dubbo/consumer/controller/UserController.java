@@ -1,4 +1,4 @@
-package com.lcz.dubbo.controller;
+package com.lcz.dubbo.consumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.lcz.dubbo.core.aop.annotation.SysLog;

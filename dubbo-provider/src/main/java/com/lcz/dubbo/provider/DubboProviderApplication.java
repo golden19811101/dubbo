@@ -1,4 +1,4 @@
-package com.lcz.dubbo;
+package com.lcz.dubbo.provider;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
